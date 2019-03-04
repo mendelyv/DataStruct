@@ -13,18 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="BSTree">
+      <UniqueIdentifier>{dbf7be03-539f-4749-b039-0255c6339dae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ArrayStack">
+      <UniqueIdentifier>{0816e691-95f6-413b-a16e-502afc0f3b97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BSTree.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BSTree.h">
-      <Filter>源文件</Filter>
+      <Filter>BSTree</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayStack.h">
+      <Filter>ArrayStack</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

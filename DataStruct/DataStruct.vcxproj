@@ -116,10 +116,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayStack.h" />
     <ClInclude Include="BSTree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BSTree.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
