@@ -47,20 +47,41 @@
 #pragma endregion
 
 #pragma region 数组栈的测试
+//#include <iostream>
+//#include "ArrayStack.h"
+//
+//int main()
+//{
+//	ArrayStack<int> *stack = new ArrayStack<int>();
+//
+//	stack->Push(1);
+//	stack->Push(2);
+//	stack->Push(3);
+//
+//	while (!stack->IsEmpty())
+//	{
+//		std::cout << stack->Pop() << std::endl;
+//	}
+//
+//	system("pause");
+//}
+#pragma endregion
+
+#pragma region 数组队列的测试
 #include <iostream>
-#include "ArrayStack.h"
+#include "ArrayQueue.h"
 
 int main()
 {
-	ArrayStack<int> *stack = new ArrayStack<int>();
+	ArrayQueue<int> *queue = new ArrayQueue<int>();
 
-	stack->Push(1);
-	stack->Push(2);
-	stack->Push(3);
+	queue->Add(1);
+	queue->Add(2);
+	queue->Add(3);
 
-	while (!stack->IsEmpty())
+	while (!queue->IsEmpty())
 	{
-		std::cout << stack->Pop() << std::endl;
+		std::cout << queue->Pop() << std::endl;
 	}
 
 	system("pause");

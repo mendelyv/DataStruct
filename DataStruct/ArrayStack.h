@@ -1,7 +1,6 @@
 #ifndef __ARRAY_STACK_H__
 #define __ARRAY_STACK_H__
 
-#define MAXSIZE 12
 #include <iostream>
 
 template <class T>
@@ -17,15 +16,20 @@ public:
 
 	int Size();
 	bool IsEmpty();
+
 private :
 	T *arr;
 	int count;
+
+protected :
+	int MAXSIZE;
 };
 
 
 template <class T>
 ArrayStack<T>::ArrayStack()
 {
+	MAXSIZE = 12;
 	arr = new T[MAXSIZE];
 	count = 0;
 	if (!arr)
