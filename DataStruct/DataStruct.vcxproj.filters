@@ -22,6 +22,9 @@
     <Filter Include="ArrayQueue">
       <UniqueIdentifier>{43a3f64d-b6e5-4a9d-b740-9318cbaac664}</UniqueIdentifier>
     </Filter>
+    <Filter Include="AVLTree">
+      <UniqueIdentifier>{8e340b26-af00-4bfd-bad1-19b525def34c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -37,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="ArrayQueue.h">
       <Filter>ArrayQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="AVLTree.h">
+      <Filter>AVLTree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

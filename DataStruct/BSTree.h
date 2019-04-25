@@ -10,7 +10,7 @@ template <class T>
 class BSTNode
 {
 public:
-	T key;//键值
+	T key;//关键字，用来对二叉查找树的结点进行排序的
 	BSTNode *left;//左孩子
 	BSTNode *right;//右孩子
 	BSTNode *parent;//父节点
@@ -80,7 +80,7 @@ private:
 };
 
 template <class T>
-BSTree<T>::BSTree() :mRoot(NULL)
+BSTree<T>::BSTree():mRoot(NULL)
 {
 
 }
@@ -92,7 +92,10 @@ BSTree<T>::~BSTree()
 
 }
 
-//前序遍历二叉树    中左右
+//前序遍历二叉树    中左右：
+//访问根结点
+//前序遍历左子树
+//前序遍历右子树
 template <class T>
 void BSTree<T>::PreOrder(BSTNode<T>* tree) const
 {
@@ -111,6 +114,9 @@ void BSTree<T>::PreOrder()
 }
 
 //中序遍历二叉树   左中右
+//中序遍历左子树
+//访问根结点
+//中序遍历右子树
 template <class T>
 void BSTree<T>::InOrder(BSTNode<T>* tree) const
 {
@@ -129,6 +135,9 @@ void BSTree<T>::InOrder()
 }
 
 //后序遍历二叉树   左右中
+//后序遍历左子树
+//后序遍历右子树
+//访问根结点
 template <class T>
 void BSTree<T>::PostOrder(BSTNode<T>* tree) const
 {
@@ -270,20 +279,22 @@ BSTNode<T>* BSTree<T>::Predecessor(BSTNode<T> *node)
 template <class T>
 void BSTree<T>::Insert(BSTNode<T>* &tree, BSTNode<T>* z)
 {
-	BSTNode<T> *y = NULL;
+	BSTNode<T> *y = NULL;//中间变量，用于记录查找的最后一个节点
 	BSTNode<T> *x = tree;
 
 	//查找z的插入位置
-	while (x != NULL)
+	while (x != NULL)//先从二叉树的根节点开始找
 	{
 		y = x;
-		if (z->key < x->key)
+		if (z->key < x->key)//如果小于根节点的键值，就往左走
 			x = x->left;
-		else
+		else//如果大于根节点的键值，就往右走
 			x = x->right;
 	}
 
 	z->parent = y;
+
+	//判断改把插入的这个节点放在什么位置
 	if (y == NULL) tree = z;
 	else if (z->key < y->key) y->left = z;
 	else y->right = z;
