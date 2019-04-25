@@ -132,7 +132,7 @@ int main()
 	std::cout << "\n== 高度：" << tree->Height();
 	std::cout << "\n== 中序遍历：";
 	tree->InOrder();
-	std::cout << "== 树的详细信息：" << std::endl;
+	std::cout << "\n== 树的详细信息：" << std::endl;
 	tree->Print();
 
 	tree->Destroy();

@@ -329,9 +329,13 @@ AVLTreeNode<T>* AVLTree<T>::Insert(AVLTreeNode<T>* &node, T key)
 		if (Height(node->left) - Height(node->right) == 2)
 		{
 			if (key < node->left->key)//如果在左孩子的左边，出现LL情况
-				LLRotation(node);
+			{
+				node = LLRotation(node);
+			}
 			else//如果在左孩子的右边，出现LR情况
-				LRRotation(node);
+			{
+				node = LRRotation(node);
+			}
 		}
 	}
 	else if (key > node->key)//应该插入右子树的情况
@@ -342,9 +346,13 @@ AVLTreeNode<T>* AVLTree<T>::Insert(AVLTreeNode<T>* &node, T key)
 		if (Height(node->right) - Height(node->left) == 2)
 		{
 			if (key < node->right->key)//如果在右孩子的左边，出现RL情况
-				RLRotation(node);
+			{
+				node = RLRotation(node);
+			}
 			else//如果在右孩子的右边，出现RR情况
-				RRRotation(node);
+			{
+				node = RRRotation(node);
+			}
 		}
 	}
 	else //已经有这个key了
@@ -376,64 +384,65 @@ AVLTreeNode<T>* AVLTree<T>::Remove(AVLTreeNode<T>* &node, AVLTreeNode<T>* z)
 		// 删除节点后，若AVL树失去平衡，则进行相应的调节
 		if (Height(node->right) - Height(node->left) == 2)
 		{
-			AVLTreeNode<T> *t = node->right;//获取一棵新树，即为高度失衡的右子树
+			AVLTreeNode<T>* t = node->right;//获取一棵新树，即为高度失衡的右子树
 			if (Height(t->left) > Height(t->right))//左子树比右子树高，RL旋转
 				RLRotation(node);
 			else//右子树比左子树高，RR旋转
 				RRRotation(node);
 		}
-		else if (z->key > node->key)//如果要删除的节点在右子树中
+	}
+	else if (z->key > node->key)//如果要删除的节点在右子树中
+	{
+		//递归删除
+		node->right = Remove(node->right, z);
+		// 删除节点后，若AVL树失去平衡，则进行相应的调节
+		if (Height(node->left) - Height(node->right) == 2)
 		{
-			//递归删除
-			node->right = Remove(node->right, z);
-			// 删除节点后，若AVL树失去平衡，则进行相应的调节
-			if (Height(node->left) - Height(node->right) == 2)
-			{
-				AVLTreeNode<T> *t = node->left;//获取一棵新树，即为高度失衡的左子树
-				if (Height(t->left) > Height(t->right))//左子树比右子树高，LL旋转
-					LLRotation(node);
-				else//右子树比左子树高，LR旋转
-					LRRotation(node);
-			}
+			AVLTreeNode<T> *t = node->left;//获取一棵新树，即为高度失衡的左子树
+			if (Height(t->left) > Height(t->right))//左子树比右子树高，LL旋转
+				LLRotation(node);
+			else//右子树比左子树高，LR旋转
+				LRRotation(node);
 		}
-		else //根节点是要删除的节点
+	}
+	else //根节点是要删除的节点
+	{
+		//当左右都不为空的时候
+		if ((node->left != NULL) && (node->right != NULL))
 		{
-			//当左右都不为空的时候
-			if ((node->left != NULL) && (node->right != NULL))
+			if (Height(node->left) > Height(node->right))
 			{
-				if (Height(node->left) > Height(node->right))
-				{
-					// 如果node的左子树比右子树高；
-					// 则(01)找出node的左子树中的最大节点
-					//   (02)将该最大节点的值赋值给node。
-					//   (03)删除该最大节点。
-					// 这类似于用"node的左子树中最大节点"做"node"的替身；
-					// 采用这种方式的好处是：删除"node的左子树中最大节点"之后，AVL树仍然是平衡的。
-					AVLTreeNode<T> *m = Maximum(node->left);
-					node->key = m->key;
-					node->left = Remove(node->left, m);
-				}
-				else
-				{
-					// 如果node的左子树不比右子树高(即它们相等，或右子树比左子树高1)
-					// 则(01)找出node的右子树中的最小节点
-					//   (02)将该最小节点的值赋值给node。
-					//   (03)删除该最小节点。
-					// 这类似于用"node的右子树中最小节点"做"node"的替身；
-					// 采用这种方式的好处是：删除"node的右子树中最小节点"之后，AVL树仍然是平衡的。
-					AVLTreeNode<T> *m = Minimum(node->right);
-					node->key = m->key;
-					node->right = Remove(node->right, m);
-				}
+				// 如果node的左子树比右子树高；
+				// 则(01)找出node的左子树中的最大节点
+				//   (02)将该最大节点的值赋值给node。
+				//   (03)删除该最大节点。
+				// 这类似于用"node的左子树中最大节点"做"node"的替身；
+				// 采用这种方式的好处是：删除"node的左子树中最大节点"之后，AVL树仍然是平衡的。
+				AVLTreeNode<T> *m = Maximum(node->left);
+				node->key = m->key;
+				node->left = Remove(node->left, m);
 			}
 			else
 			{
-				AVLTreeNode<T> *tmp = node;
-				node = (node->left != NULL) ? node->left : node->right;
-				delete tmp;
+				// 如果node的左子树不比右子树高(即它们相等，或右子树比左子树高1)
+				// 则(01)找出node的右子树中的最小节点
+				//   (02)将该最小节点的值赋值给node。
+				//   (03)删除该最小节点。
+				// 这类似于用"node的右子树中最小节点"做"node"的替身；
+				// 采用这种方式的好处是：删除"node的右子树中最小节点"之后，AVL树仍然是平衡的。
+				AVLTreeNode<T> *m = Minimum(node->right);
+				node->key = m->key;
+				node->right = Remove(node->right, m);
 			}
 		}
+		else
+		{
+			AVLTreeNode<T> *tmp = node;
+			node = (node->left != NULL) ? node->left : node->right;
+			delete tmp;
+		}
 	}
+	
 
 	return node;
 }
