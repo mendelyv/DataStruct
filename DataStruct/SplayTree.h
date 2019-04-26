@@ -238,7 +238,7 @@ SplayTreeNode<T>* SplayTree<T>::Splay(SplayTreeNode<T>* node, T key)
 		{
 			if (node->left == NULL) break;
 
-			if (key < node->left->key)
+			if (key < node->left->key) // ÓÒÐý
 			{
 				c = node->left;
 				node->left = c->right;
@@ -248,7 +248,7 @@ SplayTreeNode<T>* SplayTree<T>::Splay(SplayTreeNode<T>* node, T key)
 				if (node->left == NULL) break;
 			}
 
-			r->left = node;
+			r->left = node; //Á´½ÓÓÒ¶Ë
 			r = node;
 			node = node->left;
 		}
@@ -256,7 +256,7 @@ SplayTreeNode<T>* SplayTree<T>::Splay(SplayTreeNode<T>* node, T key)
 		{
 			if (node->right == NULL) break;
 
-			if (key > node->right->key)
+			if (key > node->right->key) // ×óÐý
 			{
 				c = node->right;
 				node->right = c->left;
@@ -265,7 +265,7 @@ SplayTreeNode<T>* SplayTree<T>::Splay(SplayTreeNode<T>* node, T key)
 
 				if (node->right == NULL) break;
 			}
-			l->right = node;
+			l->right = node; // Á´½Ó×ó¶Ë
 			l = node;
 			node = node->right;
 		}

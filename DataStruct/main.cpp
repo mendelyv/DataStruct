@@ -81,6 +81,35 @@
 
 #pragma endregion
 
+#pragma region 位运算
+
+// & : 按位与，两个位都为1时，结果才为1
+// | ：按位或，两个位都为0时，结果才为0
+// ^ : 按位异或，两个位相同为0，相异为1
+// ~ : 按位取反，1变0，0变1
+// << : 按位左移，各二进位全部左移n位，高位丢弃，低位补0
+// >> : 按位右移，各二进位全部右移n位，无符号数高位补0，有符号数：补符号位(算数右移) 或 补0(逻辑右移)
+
+#include <iostream>
+
+bool IsEvenNum(int num)
+{
+	return (num & 1) == 0 ? true : false;
+}
+
+int main()
+{
+	int a = 5;
+	if (IsEvenNum(a))
+		std::cout << "偶数" << std::endl;
+	else
+		std::cout << "奇数" << std::endl;
+
+	system("pause");
+}
+
+#pragma endregion
+
 #pragma region 二叉搜索树的测试
 //#include <iostream>
 //#include "BSTree.h"
@@ -231,53 +260,53 @@
 
 #pragma region 伸展树的测试
 
-#include <iostream>
-#include "SplayTree.h"
-using namespace std;
-
-static int arr[] = { 10,50,40,30,20,60 };
-#define TBL_SIZE(a) ( (sizeof(a)) / (sizeof(a[0])) )
-
-int main()
-{
-	int i, ilen;
-	SplayTree<int>* tree = new SplayTree<int>();
-
-	cout << "== 依次添加: ";
-	ilen = TBL_SIZE(arr);
-	for (i = 0; i < ilen; i++)
-	{
-		cout << arr[i] << " ";
-		tree->Insert(arr[i]);
-	}
-
-	cout << "\n== 前序遍历: ";
-	tree->PreOrder();
-
-	cout << "\n== 中序遍历: ";
-	tree->InOrder();
-
-	cout << "\n== 后序遍历: ";
-	tree->PostOrder();
-	cout << endl;
-
-	cout << "== 最小值: " << tree->Minimum() << endl;
-	cout << "== 最大值: " << tree->Maximum() << endl;
-	cout << "== 树的详细信息: " << endl;
-	tree->Print();
-
-	i = 30;
-	cout << "\n== 旋转节点(" << i << ")为根节点";
-	tree->Splay(i);
-	cout << "\n== 树的详细信息: " << endl;
-	tree->Print();
-
-	// 销毁二叉树
-	tree->Destroy();
-
-	system("pause");
-
-	return 0;
-}
+//#include <iostream>
+//#include "SplayTree.h"
+//using namespace std;
+//
+//static int arr[] = { 10,50,40,30,20,60 };
+//#define TBL_SIZE(a) ( (sizeof(a)) / (sizeof(a[0])) )
+//
+//int main()
+//{
+//	int i, ilen;
+//	SplayTree<int>* tree = new SplayTree<int>();
+//
+//	cout << "== 依次添加: ";
+//	ilen = TBL_SIZE(arr);
+//	for (i = 0; i < ilen; i++)
+//	{
+//		cout << arr[i] << " ";
+//		tree->Insert(arr[i]);
+//	}
+//
+//	cout << "\n== 前序遍历: ";
+//	tree->PreOrder();
+//
+//	cout << "\n== 中序遍历: ";
+//	tree->InOrder();
+//
+//	cout << "\n== 后序遍历: ";
+//	tree->PostOrder();
+//	cout << endl;
+//
+//	cout << "== 最小值: " << tree->Minimum() << endl;
+//	cout << "== 最大值: " << tree->Maximum() << endl;
+//	cout << "== 树的详细信息: " << endl;
+//	tree->Print();
+//
+//	i = 30;
+//	cout << "\n== 旋转节点(" << i << ")为根节点";
+//	tree->Splay(i);
+//	cout << "\n== 树的详细信息: " << endl;
+//	tree->Print();
+//
+//	// 销毁二叉树
+//	tree->Destroy();
+//
+//	system("pause");
+//
+//	return 0;
+//}
 
 #pragma endregion
