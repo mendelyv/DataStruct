@@ -1,4 +1,55 @@
-﻿#pragma region 二叉搜索树的测试
+﻿#pragma region Pointer复习
+
+//#include <iostream>
+//using namespace std;
+//
+//class tmp
+//{
+//public: 
+//	int value;
+//
+//	tmp(int a) :value(a) {}
+//};
+//
+//void Change(int* a, int* b)
+//{
+//	*a = 11;
+//	*b = 22;
+//}
+//
+//void Change(tmp* &a, tmp* &b)
+//{
+//	a->value = 10000;
+//	b->value = 20000;
+//}
+//
+//int main()
+//{
+//	//int a = 90, b = 100;
+//	//int* i = &a;
+//	//int* j = &b;
+//
+//	//Change(i, j);
+//
+//	//cout << *i << "   " << *j << endl;
+//	//cout << a << "   " << b << endl;
+//
+//	tmp* a = new tmp(10);
+//	tmp* b = new tmp(20);
+//
+//	Change(a, b);
+//
+//	cout << a->value << endl;
+//	cout << b->value << endl;
+//
+//	system("pause");
+//
+//	return 0;
+//}
+
+#pragma endregion
+
+#pragma region 二叉搜索树的测试
 //#include <iostream>
 //#include "BSTree.h"
 //

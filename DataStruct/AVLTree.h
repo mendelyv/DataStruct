@@ -76,6 +76,8 @@ private:
 	//根节点的右子树的左子树还有非空子节点，导致"根的右子树的高度"比"根的左子树的高度"大2，导致AVL树失去了平衡。
 	AVLTreeNode<T>* RLRotation(AVLTreeNode<T> *node);
 
+	//在传参的时候，使用指针传参，编译器需要给指针另行分配存储单元，存储一个该指针的副本，在函数中对这个副本进行操作；而使用引用传参，编译器就不需要分配存储空间和保存副本了，函数将直接对实参进行操作。所以使用引用使得程序的运行速度更快，执行效率更高。
+	//如果是传递指针，那么会先复制该指针，在函数内部使用的是复制后的指针，这个指针与原来的指针指向相同的地址，如果在函数内部将复制后的指针指向了另外的新的对象，那么不会影响原有的指针；
 	AVLTreeNode<T>* Insert(AVLTreeNode<T>* &node, T key);
 	AVLTreeNode<T>* Remove(AVLTreeNode<T>* &node, AVLTreeNode<T>* z);
 	void Destroy(AVLTreeNode<T>* &node);
