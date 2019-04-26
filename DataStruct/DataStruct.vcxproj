@@ -120,6 +120,7 @@
     <ClInclude Include="ArrayStack.h" />
     <ClInclude Include="AVLTree.h" />
     <ClInclude Include="BSTree.h" />
+    <ClInclude Include="SplayTree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

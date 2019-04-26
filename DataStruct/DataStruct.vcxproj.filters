@@ -25,6 +25,9 @@
     <Filter Include="AVLTree">
       <UniqueIdentifier>{8e340b26-af00-4bfd-bad1-19b525def34c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SplayTree">
+      <UniqueIdentifier>{76cc087c-f7e2-44d1-a3ae-9d720a3300c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -43,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="AVLTree.h">
       <Filter>AVLTree</Filter>
+    </ClInclude>
+    <ClInclude Include="SplayTree.h">
+      <Filter>SplayTree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
