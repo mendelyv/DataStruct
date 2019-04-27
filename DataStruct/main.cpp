@@ -90,23 +90,23 @@
 // << : 按位左移，各二进位全部左移n位，高位丢弃，低位补0
 // >> : 按位右移，各二进位全部右移n位，无符号数高位补0，有符号数：补符号位(算数右移) 或 补0(逻辑右移)
 
-#include <iostream>
-
-bool IsEvenNum(int num)
-{
-	return (num & 1) == 0 ? true : false;
-}
-
-int main()
-{
-	int a = 5;
-	if (IsEvenNum(a))
-		std::cout << "偶数" << std::endl;
-	else
-		std::cout << "奇数" << std::endl;
-
-	system("pause");
-}
+//#include <iostream>
+//
+//bool IsEvenNum(int num)
+//{
+//	return (num & 1) == 0 ? true : false;
+//}
+//
+//int main()
+//{
+//	int a = 5;
+//	if (IsEvenNum(a))
+//		std::cout << "偶数" << std::endl;
+//	else
+//		std::cout << "奇数" << std::endl;
+//
+//	system("pause");
+//}
 
 #pragma endregion
 

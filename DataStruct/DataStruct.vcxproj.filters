@@ -28,10 +28,16 @@
     <Filter Include="SplayTree">
       <UniqueIdentifier>{76cc087c-f7e2-44d1-a3ae-9d720a3300c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="n皇后问题">
+      <UniqueIdentifier>{782226e2-cef2-4b1f-9384-39ec87085f88}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="N_Queens.cpp">
+      <Filter>n皇后问题</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
