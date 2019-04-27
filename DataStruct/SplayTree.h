@@ -15,6 +15,7 @@ public:
 	SplayTreeNode* left;
 	SplayTreeNode* right;
 
+public:
 	SplayTreeNode() :key(NULL), left(NULL), right(NULL) {}
 
 	SplayTreeNode(T value, SplayTreeNode* l, SplayTreeNode* r) :

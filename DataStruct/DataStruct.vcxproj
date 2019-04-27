@@ -23,7 +23,7 @@
     <ProjectGuid>{474A8AD5-6F21-42F7-894C-30158FD2EDFD}</ProjectGuid>
     <RootNamespace>DataStruct</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>BinarySearchTree</ProjectName>
+    <ProjectName>DataStruct</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -120,6 +120,7 @@
     <ClInclude Include="ArrayStack.h" />
     <ClInclude Include="AVLTree.h" />
     <ClInclude Include="BSTree.h" />
+    <ClInclude Include="MaxHeap.h" />
     <ClInclude Include="SplayTree.h" />
   </ItemGroup>
   <ItemGroup>

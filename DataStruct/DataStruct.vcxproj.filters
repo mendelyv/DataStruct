@@ -31,6 +31,9 @@
     <Filter Include="n皇后问题">
       <UniqueIdentifier>{782226e2-cef2-4b1f-9384-39ec87085f88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MaxHeap">
+      <UniqueIdentifier>{d84101e6-27a6-41ef-ab2f-1f598eb1bc52}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -55,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="SplayTree.h">
       <Filter>SplayTree</Filter>
+    </ClInclude>
+    <ClInclude Include="MaxHeap.h">
+      <Filter>MaxHeap</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
