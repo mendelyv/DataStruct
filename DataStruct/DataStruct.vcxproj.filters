@@ -34,6 +34,9 @@
     <Filter Include="MaxHeap">
       <UniqueIdentifier>{d84101e6-27a6-41ef-ab2f-1f598eb1bc52}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MinHeap">
+      <UniqueIdentifier>{0f5f12ba-b11b-45ce-9504-a8f398331180}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -61,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="MaxHeap.h">
       <Filter>MaxHeap</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHeap.h">
+      <Filter>MinHeap</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

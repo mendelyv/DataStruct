@@ -311,16 +311,58 @@
 
 #pragma endregion
 
-#pragma region 最大堆的测试
+//#pragma region 最大堆的测试
+//
+//#include <iostream>
+//#include "MaxHeap.h"
+//
+//int main()
+//{
+//	int a[] = { 10, 40, 30, 60, 90, 70, 20, 50, 80 };
+//	int i, len = (sizeof(a)) / (sizeof(a[0]));
+//	MaxHeap<int>* tree = new MaxHeap<int>();
+//
+//	std::cout << "== 依次添加: ";
+//	for (i = 0; i < len; i++)
+//	{
+//		std::cout << a[i] << " ";
+//		tree->Insert(a[i]);
+//	}
+//
+//	std::cout << "\n== 最 大 堆: ";
+//	tree->Print();
+//
+//	i = 85;
+//	tree->Insert(i);
+//	std::cout << "\n== 添加元素: " << i;
+//	std::cout << "\n== 最 大 堆: ";
+//	tree->Print();
+//
+//	i = 90;
+//	tree->Remove(i);
+//	std::cout << "\n== 删除元素: " << i;
+//	std::cout << "\n== 最 大 堆: ";
+//	tree->Print();
+//	std::cout << std::endl;
+//
+//	system("pause");
+//
+//	return 0;
+//}
+//
+//#pragma endregion
+
+
+#pragma region 最小堆测试
 
 #include <iostream>
-#include "MaxHeap.h"
+#include "MinHeap.h"
 
 int main()
 {
-	int a[] = { 10, 40, 30, 60, 90, 70, 20, 50, 80 };
+	int a[] = { 80, 40, 30, 60, 90, 70, 10, 50, 20 };
 	int i, len = (sizeof(a)) / (sizeof(a[0]));
-	MaxHeap<int>* tree = new MaxHeap<int>();
+	MinHeap<int>* tree = new MinHeap<int>();
 
 	std::cout << "== 依次添加: ";
 	for (i = 0; i < len; i++)
@@ -329,19 +371,19 @@ int main()
 		tree->Insert(a[i]);
 	}
 
-	std::cout << "\n== 最 大 堆: ";
+	std::cout << "\n== 最 小 堆: ";
 	tree->Print();
 
-	i = 85;
+	i = 15;
 	tree->Insert(i);
 	std::cout << "\n== 添加元素: " << i;
-	std::cout << "\n== 最 大 堆: ";
+	std::cout << "\n== 最 小 堆: ";
 	tree->Print();
 
-	i = 90;
+	i = 10;
 	tree->Remove(i);
 	std::cout << "\n== 删除元素: " << i;
-	std::cout << "\n== 最 大 堆: ";
+	std::cout << "\n== 最 小 堆: ";
 	tree->Print();
 	std::cout << std::endl;
 

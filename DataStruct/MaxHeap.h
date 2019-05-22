@@ -6,15 +6,11 @@
 #include <iostream>
 
 //最大堆
+//起始索引下标为0
 
 template <class T>
 class MaxHeap
 {
-public:
-	T* mHeap;//数据
-	int mCapacity;//总容量
-	int mSize;//实际容量
-
 public:
 	MaxHeap();
 	MaxHeap(int capacity);
@@ -27,6 +23,10 @@ public:
 	void Print();
 
 private:
+	T* mHeap;//数据
+	int mCapacity;//总容量
+	int mSize;//实际容量
+
 	// 最大堆的向下调整算法
 	void FilterDown(int start, int end);
 	//最大堆的向上调整算法（从start开始向上直到0）
@@ -89,16 +89,16 @@ void MaxHeap<T>::FilterUp(int start)
 
 	while (c > 0)
 	{
-		if (mHeap[p] >= tmp) //如果比父节点比当前的数据大，即满足最大堆的特性，跳出
+		if (mHeap[p] >= tmp) //如果父节点比当前的数据大，即满足最大堆的特性，跳出
 			break;
 		else//如果小于
 		{
-			mHeap[c] = mHeap[p];//将当前节点的值赋给父节点
+			mHeap[c] = mHeap[p];//将父节点的值赋给当前节点
 			c = p;
 			p = (p - 1) / 2;
 		}
 	}
-	mHeap[c] = tmp;
+	mHeap[c] = tmp;//最后将c下标位置赋值为开始的值
 }
 
 
@@ -129,21 +129,22 @@ int MaxHeap<T>::Insert(T data)
 template <class T>
 void MaxHeap<T>::FilterDown(int start, int end)
 {
-	int c = start;
-	int l = 2 * c + 1;
-	T tmp = mHeap[c];
+	int c = start;	//当前节点的下标
+	int l = 2 * c + 1;//当前节点的左孩子下标
+	T tmp = mHeap[c];//当前节点的值
 
 	while (l <= end)
 	{
+		             //l是左孩子		    l+1是右孩子
 		if (l < end && mHeap[l] < mHeap[l + 1])
-			l++;
+			l++;//左右孩子中选择值较大者，即mHeap[l + 1]
 		if (tmp >= mHeap[l])
 			break;
 		else
 		{
 			mHeap[c] = mHeap[l];
 			c = l;
-			l = 2 * l + 1;
+			l = 2 * c + 1;
 		}
 	}
 	mHeap[c] = tmp;
@@ -161,7 +162,7 @@ int MaxHeap<T>::Remove(T data)
 	if (index == -1)
 		return -1;
 
-	mHeap[index] = mHeap[--mSize];
+	mHeap[index] = mHeap[--mSize];//使用最后一个数据覆盖
 	FilterDown(index, mSize - 1);
 
 	return 0;

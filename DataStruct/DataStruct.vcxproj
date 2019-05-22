@@ -121,6 +121,7 @@
     <ClInclude Include="AVLTree.h" />
     <ClInclude Include="BSTree.h" />
     <ClInclude Include="MaxHeap.h" />
+    <ClInclude Include="MinHeap.h" />
     <ClInclude Include="SplayTree.h" />
   </ItemGroup>
   <ItemGroup>
