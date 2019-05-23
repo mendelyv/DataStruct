@@ -37,6 +37,9 @@
     <Filter Include="MinHeap">
       <UniqueIdentifier>{0f5f12ba-b11b-45ce-9504-a8f398331180}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HuffmanTree">
+      <UniqueIdentifier>{454ac772-26ac-4994-83ef-2d65cbd78723}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -67,6 +70,15 @@
     </ClInclude>
     <ClInclude Include="MinHeap.h">
       <Filter>MinHeap</Filter>
+    </ClInclude>
+    <ClInclude Include="HuffmanTreeNode.h">
+      <Filter>HuffmanTree</Filter>
+    </ClInclude>
+    <ClInclude Include="HuffmanHeap.h">
+      <Filter>HuffmanTree</Filter>
+    </ClInclude>
+    <ClInclude Include="HuffmanTree.h">
+      <Filter>HuffmanTree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

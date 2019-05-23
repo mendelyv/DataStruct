@@ -120,6 +120,9 @@
     <ClInclude Include="ArrayStack.h" />
     <ClInclude Include="AVLTree.h" />
     <ClInclude Include="BSTree.h" />
+    <ClInclude Include="HuffmanHeap.h" />
+    <ClInclude Include="HuffmanTree.h" />
+    <ClInclude Include="HuffmanTreeNode.h" />
     <ClInclude Include="MaxHeap.h" />
     <ClInclude Include="MinHeap.h" />
     <ClInclude Include="SplayTree.h" />

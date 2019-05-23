@@ -355,40 +355,83 @@
 
 #pragma region 最小堆测试
 
+//#include <iostream>
+//#include "MinHeap.h"
+//
+//int main()
+//{
+//	int a[] = { 80, 40, 30, 60, 90, 70, 10, 50, 20 };
+//	int i, len = (sizeof(a)) / (sizeof(a[0]));
+//	MinHeap<int>* tree = new MinHeap<int>();
+//
+//	std::cout << "== 依次添加: ";
+//	for (i = 0; i < len; i++)
+//	{
+//		std::cout << a[i] << " ";
+//		tree->Insert(a[i]);
+//	}
+//
+//	std::cout << "\n== 最 小 堆: ";
+//	tree->Print();
+//
+//	i = 15;
+//	tree->Insert(i);
+//	std::cout << "\n== 添加元素: " << i;
+//	std::cout << "\n== 最 小 堆: ";
+//	tree->Print();
+//
+//	i = 10;
+//	tree->Remove(i);
+//	std::cout << "\n== 删除元素: " << i;
+//	std::cout << "\n== 最 小 堆: ";
+//	tree->Print();
+//	std::cout << std::endl;
+//
+//	system("pause");
+//
+//	return 0;
+//}
+
+#pragma endregion
+
+
+
+#pragma region 霍夫曼树测试
+
 #include <iostream>
-#include "MinHeap.h"
+#include "HuffmanTree.h"
+using namespace std;
+
 
 int main()
 {
-	int a[] = { 80, 40, 30, 60, 90, 70, 10, 50, 20 };
-	int i, len = (sizeof(a)) / (sizeof(a[0]));
-	MinHeap<int>* tree = new MinHeap<int>();
+	int a[] = { 5,6,8,7,15 };
+	int i, ilen = sizeof(a) / (sizeof(a[0]));
+	HuffmanTree<int>* tree = new HuffmanTree<int>();
 
-	std::cout << "== 依次添加: ";
-	for (i = 0; i < len; i++)
-	{
-		std::cout << a[i] << " ";
-		tree->Insert(a[i]);
-	}
+	cout << "== 添加数组: ";
+	for (i = 0; i < ilen; i++)
+		cout << a[i] << " ";
 
-	std::cout << "\n== 最 小 堆: ";
+	tree->Create(a, ilen);
+
+	cout << "\n== 前序遍历: ";
+	tree->PreOrder();
+
+	cout << "\n== 中序遍历: ";
+	tree->InOrder();
+
+	cout << "\n== 后序遍历: ";
+	tree->PostOrder();
+	cout << endl;
+
+	cout << "== 树的详细信息: " << endl;
 	tree->Print();
 
-	i = 15;
-	tree->Insert(i);
-	std::cout << "\n== 添加元素: " << i;
-	std::cout << "\n== 最 小 堆: ";
-	tree->Print();
-
-	i = 10;
-	tree->Remove(i);
-	std::cout << "\n== 删除元素: " << i;
-	std::cout << "\n== 最 小 堆: ";
-	tree->Print();
-	std::cout << std::endl;
+	// 销毁二叉树
+	tree->Destroy();
 
 	system("pause");
-
 	return 0;
 }
 
