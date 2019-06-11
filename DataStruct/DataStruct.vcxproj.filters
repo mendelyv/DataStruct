@@ -40,6 +40,9 @@
     <Filter Include="HuffmanTree">
       <UniqueIdentifier>{454ac772-26ac-4994-83ef-2d65cbd78723}</UniqueIdentifier>
     </Filter>
+    <Filter Include="nowcoder">
+      <UniqueIdentifier>{90a2d935-ee70-4272-a416-dde6f14e75eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -47,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="N_Queens.cpp">
       <Filter>n皇后问题</Filter>
+    </ClCompile>
+    <ClCompile Include="nowcoder.cpp">
+      <Filter>nowcoder</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

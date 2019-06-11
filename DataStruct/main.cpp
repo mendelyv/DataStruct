@@ -398,41 +398,41 @@
 
 #pragma region 霍夫曼树测试
 
-#include <iostream>
-#include "HuffmanTree.h"
-using namespace std;
-
-
-int main()
-{
-	int a[] = { 5,6,8,7,15 };
-	int i, ilen = sizeof(a) / (sizeof(a[0]));
-	HuffmanTree<int>* tree = new HuffmanTree<int>();
-
-	cout << "== 添加数组: ";
-	for (i = 0; i < ilen; i++)
-		cout << a[i] << " ";
-
-	tree->Create(a, ilen);
-
-	cout << "\n== 前序遍历: ";
-	tree->PreOrder();
-
-	cout << "\n== 中序遍历: ";
-	tree->InOrder();
-
-	cout << "\n== 后序遍历: ";
-	tree->PostOrder();
-	cout << endl;
-
-	cout << "== 树的详细信息: " << endl;
-	tree->Print();
-
-	// 销毁二叉树
-	tree->Destroy();
-
-	system("pause");
-	return 0;
-}
+//#include <iostream>
+//#include "HuffmanTree.h"
+//using namespace std;
+//
+//
+//int main()
+//{
+//	int a[] = { 5,6,8,7,15 };
+//	int i, ilen = sizeof(a) / (sizeof(a[0]));
+//	HuffmanTree<int>* tree = new HuffmanTree<int>();
+//
+//	cout << "== 添加数组: ";
+//	for (i = 0; i < ilen; i++)
+//		cout << a[i] << " ";
+//
+//	tree->Create(a, ilen);
+//
+//	cout << "\n== 前序遍历: ";
+//	tree->PreOrder();
+//
+//	cout << "\n== 中序遍历: ";
+//	tree->InOrder();
+//
+//	cout << "\n== 后序遍历: ";
+//	tree->PostOrder();
+//	cout << endl;
+//
+//	cout << "== 树的详细信息: " << endl;
+//	tree->Print();
+//
+//	// 销毁二叉树
+//	tree->Destroy();
+//
+//	system("pause");
+//	return 0;
+//}
 
 #pragma endregion
