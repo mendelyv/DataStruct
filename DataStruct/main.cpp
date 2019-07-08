@@ -435,4 +435,38 @@
 //	return 0;
 //}
 
-#pragma endregion
+//#pragma endregion
+//
+//
+//#include <iostream>
+//using namespace std;
+//
+//class c
+//{
+//public:
+//	int name;
+//};
+//
+//int main()
+//{
+//	int arr[] = { 1,2,3 };
+//
+//	int* p = arr;
+//
+//	cout << sizeof(arr) << endl;
+//	cout << sizeof(p) << endl;
+//
+//	c* c1 = new c();
+//	c1->name = 100;
+//	c* c2 = c1;
+//
+//	char* p1 = NULL;
+//
+//	cout << sizeof(c1) << endl;
+//	cout << sizeof(c2) << endl;
+//	cout << sizeof(p1) << endl;
+//
+//	system("pause");
+//
+//	return 1;
+//}

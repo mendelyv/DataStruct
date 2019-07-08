@@ -43,6 +43,9 @@
     <Filter Include="nowcoder">
       <UniqueIdentifier>{90a2d935-ee70-4272-a416-dde6f14e75eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="三门问题">
+      <UniqueIdentifier>{f04f9a00-9fcc-4e26-9186-ee766381b31a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,6 +56,9 @@
     </ClCompile>
     <ClCompile Include="nowcoder.cpp">
       <Filter>nowcoder</Filter>
+    </ClCompile>
+    <ClCompile Include="threeDoor.cpp">
+      <Filter>三门问题</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
