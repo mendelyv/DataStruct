@@ -46,6 +46,9 @@
     <Filter Include="三门问题">
       <UniqueIdentifier>{f04f9a00-9fcc-4e26-9186-ee766381b31a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ShellSort">
+      <UniqueIdentifier>{6d90d2e1-160e-4ab6-b936-a0cafcb5d7bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -59,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="threeDoor.cpp">
       <Filter>三门问题</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellSort.cpp">
+      <Filter>ShellSort</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
