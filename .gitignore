@@ -3,3 +3,6 @@
 /DataStruct/Debug
 /x64
 /DataStruct/x64
+/build
+/.cache
+/bin

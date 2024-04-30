@@ -202,59 +202,59 @@
 
 #pragma region AVL树的测试
 
-//#include "AVLTree.h"
-//#include <iostream>
-//
-//static int arr[] = { 3, 2, 1, 4, 5, 6, 7, 16, 15, 14, 13, 12, 11, 10, 8, 9 };
-//#define TBL_SIZE(a) ( (sizeof(a)) / (sizeof(a[0])) )
-//
-//int main()
-//{
-//	int i, iLen;
-//	AVLTree<int>* tree = new AVLTree<int>();
-//
-//	std::cout << "== 依次添加：";
-//	iLen = TBL_SIZE(arr);
-//	for (i = 0; i < iLen; i++)
-//	{
-//		std::cout << arr[i] << " ";
-//		tree->Insert(arr[i]);
-//	}
-//
-//	std::cout << "\n== 前序遍历：";
-//	tree->PreOrder();
-//
-//	std::cout << "\n== 中序遍历：";
-//	tree->InOrder();
-//
-//	std::cout << "\n== 后序遍历：";
-//	tree->PostOrder();
-//	std::cout << std::endl;
-//
-//	std::cout << "== 高度：" << tree->Height() << std::endl;
-//	std::cout << "== 最小值：" << tree->Minimum() << std::endl;
-//	std::cout << "== 最大值：" << tree->Maximum() << std::endl;
-//	std::cout << "== 树的详细信息：" << std::endl;
-//	tree->Print();
-//
-//	i = 8;
-//	std::cout << "\n== 删除根节点：" << i;
-//	tree->Remove(i);
-//
-//	std::cout << "\n== 高度：" << tree->Height();
-//	std::cout << "\n== 中序遍历：";
-//	tree->InOrder();
-//	std::cout << "\n== 树的详细信息：" << std::endl;
-//	tree->Print();
-//
-//	tree->Destroy();
-//
-//	system("pause");
-//
-//	return 0;
-//
-//
-//}
+#include "AVLTree.h"
+#include <iostream>
+
+static int arr[] = { 3, 2, 1, 4, 5, 6, 7, 16, 15, 14, 13, 12, 11, 10, 8, 9 };
+#define TBL_SIZE(a) ( (sizeof(a)) / (sizeof(a[0])) )
+
+int main()
+{
+    int i, iLen;
+    AVLTree<int>* tree = new AVLTree<int>();
+
+    std::cout << "== 依次添加：";
+    iLen = TBL_SIZE(arr);
+    for (i = 0; i < iLen; i++)
+    {
+        std::cout << arr[i] << " ";
+        tree->Insert(arr[i]);
+    }
+
+    std::cout << "\n== 前序遍历：";
+    tree->PreOrder();
+
+    std::cout << "\n== 中序遍历：";
+    tree->InOrder();
+
+    std::cout << "\n== 后序遍历：";
+    tree->PostOrder();
+    std::cout << std::endl;
+
+    std::cout << "== 高度：" << tree->Height() << std::endl;
+    std::cout << "== 最小值：" << tree->Minimum() << std::endl;
+    std::cout << "== 最大值：" << tree->Maximum() << std::endl;
+    std::cout << "== 树的详细信息：" << std::endl;
+    tree->Print();
+
+    i = 8;
+    std::cout << "\n== 删除根节点：" << i;
+    tree->Remove(i);
+
+    std::cout << "\n== 高度：" << tree->Height();
+    std::cout << "\n== 中序遍历：";
+    tree->InOrder();
+    std::cout << "\n== 树的详细信息：" << std::endl;
+    tree->Print();
+
+    tree->Destroy();
+
+    system("pause");
+
+    return 0;
+
+
+}
 
 #pragma endregion
 
